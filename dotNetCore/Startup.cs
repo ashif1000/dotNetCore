@@ -52,7 +52,16 @@ namespace dotNetCore
             {
                 endpoints.MapGet("/", async context =>
                 {
-                    await context.Response.WriteAsync("Hello World");
+                    //if(env.IsDevelopment())
+                    //{
+                    //    await context.Response.WriteAsync("This is Development environment");
+                    //}
+                    //else if(env.IsProduction())
+                    //{
+                    //    await context.Response.WriteAsync("This is Production environment");
+                    //}
+                    //else
+                    await context.Response.WriteAsync(env.EnvironmentName);
                 });
             });
 
