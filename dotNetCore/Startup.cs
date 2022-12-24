@@ -46,25 +46,7 @@ namespace dotNetCore
 
             app.UseRouting();
 
-            //app.UseAuthorization();
-
-            //app.UseEndpoints(endpoints =>
-            //{
-            //    endpoints.MapGet("/", async context =>
-            //    {
-            //        //if(env.IsDevelopment())
-            //        //{
-            //        //    await context.Response.WriteAsync("This is Development environment");
-            //        //}
-            //        //else if(env.IsProduction())
-            //        //{
-            //        //    await context.Response.WriteAsync("This is Production environment");
-            //        //}
-            //        //else
-            //        await context.Response.WriteAsync(env.EnvironmentName);
-            //    });
-            //});
-
+            
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapDefaultControllerRoute();
