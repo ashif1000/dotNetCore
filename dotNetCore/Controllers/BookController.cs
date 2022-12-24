@@ -3,18 +3,30 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using dotNetCore.Repository;
+using dotNetCore.Models;
 
 namespace dotNetCore.Controllers
 {
     public class BookController : Controller
     {
-        public string GetAllBooks()
+        private readonly BookRepository _bookRepository = null;
+            
+        public BookController()
         {
-            return "All Books";
+            _bookRepository = new BookRepository();
         }
-        public string GetBook(int id)
+        public List<BookModel> GetAllBooks()
         {
-            return $"A single book with ID = {id}";
+            return _bookRepository.GetAllBooks(); 
+        }
+        public BookModel GetBook(int id)
+        {
+            return _bookRepository.GetBookById(id);
+        }
+        public List<BookModel> SearchBooks(string bookName, string authorName)
+        {
+            return _bookRepository.SearchBook(bookName,authorName);
         }
     }
 }
