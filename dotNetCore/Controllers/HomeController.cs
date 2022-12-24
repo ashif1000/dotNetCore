@@ -11,6 +11,10 @@ namespace dotNetCore.Controllers
 {
     public class HomeController : Controller
     {
+        public string Index()
+        {
+            return "First MVC controller first method";
+        }
         private readonly ILogger<HomeController> _logger;
 
         public HomeController(ILogger<HomeController> logger)
@@ -18,7 +22,7 @@ namespace dotNetCore.Controllers
             _logger = logger;
         }
 
-        public IActionResult Index()
+        public IActionResult Index1()
         {
             return View();
         }

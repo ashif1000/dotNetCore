@@ -27,7 +27,7 @@ namespace dotNetCore
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
+        public void Configure(IApplicationBuilder app, IWebHostEnvironment env) //We define our HTTP pipeline
         {
             if (env.IsDevelopment())
             {
@@ -48,29 +48,26 @@ namespace dotNetCore
 
             //app.UseAuthorization();
 
-            app.UseEndpoints(endpoints =>
-            {
-                endpoints.MapGet("/", async context =>
-                {
-                    //if(env.IsDevelopment())
-                    //{
-                    //    await context.Response.WriteAsync("This is Development environment");
-                    //}
-                    //else if(env.IsProduction())
-                    //{
-                    //    await context.Response.WriteAsync("This is Production environment");
-                    //}
-                    //else
-                    await context.Response.WriteAsync(env.EnvironmentName);
-                });
-            });
+            //app.UseEndpoints(endpoints =>
+            //{
+            //    endpoints.MapGet("/", async context =>
+            //    {
+            //        //if(env.IsDevelopment())
+            //        //{
+            //        //    await context.Response.WriteAsync("This is Development environment");
+            //        //}
+            //        //else if(env.IsProduction())
+            //        //{
+            //        //    await context.Response.WriteAsync("This is Production environment");
+            //        //}
+            //        //else
+            //        await context.Response.WriteAsync(env.EnvironmentName);
+            //    });
+            //});
 
             app.UseEndpoints(endpoints =>
             {
-                endpoints.MapGet("/ashif", async context =>
-                {
-                    await context.Response.WriteAsync("Hello Ashif");
-                });
+                endpoints.MapDefaultControllerRoute();
             });
         }
     }
