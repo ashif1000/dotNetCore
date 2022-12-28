@@ -41,12 +41,10 @@ namespace dotNetCore
             //    await context.Response.WriteAsync("\nBYE Middleware #1 End part");
             //});
 
-            
             app.UseStaticFiles();
 
             app.UseRouting();
 
-            
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapDefaultControllerRoute();
