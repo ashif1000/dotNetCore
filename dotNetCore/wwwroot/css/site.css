@@ -12,6 +12,11 @@ a {
   color: #0366d6;
 }
 
+.logo{
+    height: 300px;
+    width: 300px;
+    background-color: aqua;
+}
 .btn-primary {
   color: #fff;
   background-color: #1b6ec2;

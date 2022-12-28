@@ -42,7 +42,7 @@ namespace dotNetCore
             //});
 
             
-            //app.UseStaticFiles();
+            app.UseStaticFiles();
 
             app.UseRouting();
 
